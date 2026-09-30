@@ -501,15 +501,15 @@ def _call_groq(prompt_name: str, variables: Dict[str, Any], schema: Type[T]) -> 
         response_format={"type": "json_object"}
     )
 
-                response_text = response.choices[0].message.content
-            # Strip markdown json blocks if present
-            if response_text.startswith('`json'):
-                response_text = response_text.split('`json', 1)[1]
-            if response_text.endswith('`'):
-                response_text = response_text.rsplit('`', 1)[0]
-            response_text = response_text.strip()
-            
-            return response_text
+      response_text = response.choices[0].message.content
+    
+    # Strip markdown json blocks if present
+    if response_text.startswith('```json'):
+        response_text = response_text.split('```json', 1)[1]
+    if response_text.endswith('```'):
+        response_text = response_text.rsplit('```', 1)[0]
+    
+    return response_text.strip()
 
 def _call_gemini(prompt_name: str, variables: Dict[str, Any], schema: Type[T]) -> str:
     """Call Google Gemini API"""
