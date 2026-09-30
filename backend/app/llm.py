@@ -69,6 +69,8 @@ def get_default_fixture(schema_name: str) -> Dict[str, Any]:
     fixtures = {
         "StudentProfile": {
             "name": "Demo Student",
+            "email": "student@example.com",
+            "phone": "+91 9876543210",
             "location": "India",
             "summary": "A motivated student seeking career opportunities",
             "education": [

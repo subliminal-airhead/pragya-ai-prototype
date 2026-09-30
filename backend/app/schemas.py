@@ -29,6 +29,8 @@ class Eligibility(BaseModel):  # OPTIONAL, opt-in, used only for govt matching
 
 class StudentProfile(BaseModel):
     name: Optional[str] = None
+    email: Optional[str] = None
+    phone: Optional[str] = None
     location: Optional[str] = None
     summary: str = ""
     education: List[Education] = []

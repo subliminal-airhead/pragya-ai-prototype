@@ -115,8 +115,8 @@ export const ResumeUpload: React.FC = () => {
         }
         ingestResume({
           fullName: prof.name || 'Student',
-          email: '',
-          phone: '',
+          email: prof.email || '',
+            phone: prof.phone || '',
           university: edu.institution || 'University',
           degree: edu.degree || 'B.Tech',
           major: edu.field || 'Computer Science',
@@ -422,5 +422,6 @@ export const ResumeUpload: React.FC = () => {
     </div>
   );
 };
+
 
 
