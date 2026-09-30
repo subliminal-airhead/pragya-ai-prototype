@@ -1,0 +1,123 @@
+[
+  {
+    "id": "career_software_eng",
+    "title": "Software Development Engineer",
+    "slug": "software-engineer",
+    "category": "Software Engineering",
+    "short_description": "Architect and deploy scalable web services, microservices, and product backends.",
+    "full_description": "Software development engineers build resilient backend architectures, scalable database schemas, high-throughput APIs, and modern frontend user experiences.",
+    "avg_salary": "₹7,50,000 - ₹14,00,000 / year",
+    "market_demand": "Very High",
+    "growth_rate": "+24% YoY",
+    "openings_estimate": "12,000+ Active Roles (India)",
+    "top_hiring_companies": ["TCS", "Infosys", "Wipro", "Persistent Systems", "Cognizant", "Zoho"],
+    "required_skills": [
+      { "name": "Python", "level": "Advanced", "weight": 90 },
+      { "name": "SQL", "level": "Advanced", "weight": 85 },
+      { "name": "DSA", "level": "Advanced", "weight": 95 },
+      { "name": "REST APIs", "level": "Advanced", "weight": 90 },
+      { "name": "Git", "level": "Intermediate", "weight": 80 },
+      { "name": "System Design", "level": "Intermediate", "weight": 85 }
+    ]
+  },
+  {
+    "id": "career_full_stack",
+    "title": "Full-Stack Web Developer",
+    "slug": "full-stack-developer",
+    "category": "Web & Cloud Systems",
+    "short_description": "Build end-to-end modern web applications with React, Node.js, and relational databases.",
+    "full_description": "Full-stack web engineers work across modern user interfaces and backend services, creating accessible client experiences backed by performant databases.",
+    "avg_salary": "₹6,00,000 - ₹12,00,000 / year",
+    "market_demand": "High",
+    "growth_rate": "+28% YoY",
+    "openings_estimate": "15,500+ Active Roles (India)",
+    "top_hiring_companies": ["Accenture", "Capgemini", "LTIMindtree", "Swiggy", "Jio", "Razorpay"],
+    "required_skills": [
+      { "name": "React", "level": "Advanced", "weight": 95 },
+      { "name": "JavaScript", "level": "Advanced", "weight": 90 },
+      { "name": "Node.js", "level": "Intermediate", "weight": 85 },
+      { "name": "SQL", "level": "Intermediate", "weight": 80 },
+      { "name": "REST APIs", "level": "Advanced", "weight": 90 },
+      { "name": "Git", "level": "Intermediate", "weight": 80 }
+    ]
+  },
+  {
+    "id": "career_data_analyst",
+    "title": "Data Analyst & Business Intelligence",
+    "slug": "data-analyst",
+    "category": "Data & Analytics",
+    "short_description": "Transform operational and enterprise data into dashboards, forecasts, and strategic decisions.",
+    "full_description": "Data analysts inspect, cleanse, and model data using SQL, Excel, and Python to uncover business trends and communicate insights to leadership.",
+    "avg_salary": "₹5,00,000 - ₹9,50,000 / year",
+    "market_demand": "High",
+    "growth_rate": "+20% YoY",
+    "openings_estimate": "9,800+ Active Roles (India)",
+    "top_hiring_companies": ["Deloitte", "EY", "KPMG", "PwC", "Genpact", "Mu Sigma"],
+    "required_skills": [
+      { "name": "SQL", "level": "Advanced", "weight": 95 },
+      { "name": "Excel / Spreadsheets", "level": "Advanced", "weight": 90 },
+      { "name": "Python", "level": "Intermediate", "weight": 80 },
+      { "name": "Power BI / Tableau", "level": "Intermediate", "weight": 85 },
+      { "name": "Problem Solving", "level": "Advanced", "weight": 85 }
+    ]
+  },
+  {
+    "id": "career_ai_ml_eng",
+    "title": "AI & Machine Learning Engineer",
+    "slug": "ai-ml-engineer",
+    "category": "Artificial Intelligence",
+    "short_description": "Design, train, and deploy predictive models, LLM pipelines, and computer vision systems.",
+    "full_description": "AI/ML engineers build deep learning pipelines, vector retrieval architectures, and fine-tune open weights models for enterprise automation.",
+    "avg_salary": "₹8,50,000 - ₹18,00,000 / year",
+    "market_demand": "Very High",
+    "growth_rate": "+45% YoY",
+    "openings_estimate": "6,400+ Active Roles (India)",
+    "top_hiring_companies": ["Google India", "Microsoft IDC", "Amazon", "Fractal Analytics", "Tiger Analytics"],
+    "required_skills": [
+      { "name": "Python", "level": "Advanced", "weight": 95 },
+      { "name": "Machine Learning", "level": "Advanced", "weight": 90 },
+      { "name": "Deep Learning / PyTorch", "level": "Intermediate", "weight": 85 },
+      { "name": "DSA", "level": "Advanced", "weight": 90 },
+      { "name": "SQL", "level": "Intermediate", "weight": 80 }
+    ]
+  },
+  {
+    "id": "career_cloud_devops",
+    "title": "Cloud Infrastructure & DevOps Engineer",
+    "slug": "cloud-devops",
+    "category": "Cloud & Systems",
+    "short_description": "Automate CI/CD pipelines, container orchestration, and cloud infrastructure management.",
+    "full_description": "DevOps specialists manage reliable deployments using Docker, Kubernetes, Linux servers, and cloud providers to guarantee 99.9% uptime.",
+    "avg_salary": "₹7,00,000 - ₹15,00,000 / year",
+    "market_demand": "High",
+    "growth_rate": "+26% YoY",
+    "openings_estimate": "7,800+ Active Roles (India)",
+    "top_hiring_companies": ["HCLTech", "Tech Mahindra", "Red Hat India", "Oracle India", "Persistent"],
+    "required_skills": [
+      { "name": "Linux", "level": "Advanced", "weight": 95 },
+      { "name": "Docker", "level": "Advanced", "weight": 90 },
+      { "name": "CI/CD", "level": "Intermediate", "weight": 85 },
+      { "name": "Git", "level": "Advanced", "weight": 85 },
+      { "name": "Python / Bash", "level": "Intermediate", "weight": 80 }
+    ]
+  },
+  {
+    "id": "career_digital_india_tech",
+    "title": "Digital e-Governance & Public Tech Associate",
+    "slug": "digital-india-specialist",
+    "category": "Govt Tech & Public Digital Goods",
+    "short_description": "Implement public digital infrastructure, citizen portals, and e-governance solutions.",
+    "full_description": "Public technology associates support National Informatics Centre (NIC), state IT departments, and digital mission projects driving citizen-facing portals.",
+    "avg_salary": "₹4,50,000 - ₹8,50,000 / year",
+    "market_demand": "Steady",
+    "growth_rate": "+18% YoY",
+    "openings_estimate": "5,200+ Active Roles (Govt / Semi-Govt)",
+    "top_hiring_companies": ["NIC Madhya Pradesh", "MPSeDC", "Digital India Corporation", "CSC e-Gov", "NeGD"],
+    "required_skills": [
+      { "name": "SQL", "level": "Intermediate", "weight": 85 },
+      { "name": "Web Development", "level": "Intermediate", "weight": 80 },
+      { "name": "Database Management", "level": "Intermediate", "weight": 85 },
+      { "name": "Problem Solving", "level": "Advanced", "weight": 85 }
+    ]
+  }
+]

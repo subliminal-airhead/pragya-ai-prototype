@@ -1,0 +1,178 @@
+[
+  {
+    "id": "backend-developer",
+    "title": "Backend Developer",
+    "category": "Software Development",
+    "required_skills": [
+      {"skill": "python", "importance": "critical"},
+      {"skill": "java", "importance": "critical"},
+      {"skill": "spring boot", "importance": "critical"},
+      {"skill": "rest api", "importance": "critical"},
+      {"skill": "mysql", "importance": "important"},
+      {"skill": "postgresql", "importance": "important"},
+      {"skill": "mongodb", "importance": "important"},
+      {"skill": "git", "importance": "important"},
+      {"skill": "docker", "importance": "important"},
+      {"skill": "linux", "importance": "important"}
+    ],
+    "typical_education": "Bachelor's in Computer Science or related field",
+    "growth_outlook": "Strong demand for backend developers in enterprise applications and cloud services",
+    "indicative_entry_salary_lpa": "4.5-6.0",
+    "related_roles": ["full-stack-developer", "devops-engineer", "data-engineer"],
+    "interview_topics": ["OOP concepts", "Database design", "REST API design", "Multithreading", "Microservices architecture"]
+  },
+  {
+    "id": "frontend-developer",
+    "title": "Frontend Developer",
+    "category": "Software Development",
+    "required_skills": [
+      {"skill": "javascript", "importance": "critical"},
+      {"skill": "html5", "importance": "critical"},
+      {"skill": "css3", "importance": "critical"},
+      {"skill": "react", "importance": "critical"},
+      {"skill": "typescript", "importance": "important"},
+      {"skill": "redux", "importance": "important"},
+      {"skill": "webpack", "importance": "important"},
+      {"skill": "git", "importance": "important"},
+      {"skill": "responsive design", "importance": "important"},
+      {"skill": "bootstrap", "importance": "nice_to_have"}
+    ],
+    "typical_education": "Bachelor's in Computer Science, Design or related field",
+    "growth_outlook": "High demand for frontend developers with framework expertise",
+    "indicative_entry_salary_lpa": "3.5-5.0",
+    "related_roles": ["full-stack-developer", "ui-ux-designer", "web-designer"],
+    "interview_topics": ["JavaScript fundamentals", "CSS layout", "React hooks", "State management", "Performance optimization"]
+  },
+  {
+    "id": "full-stack-developer",
+    "title": "Full-Stack Developer",
+    "category": "Software Development",
+    "required_skills": [
+      {"skill": "javascript", "importance": "critical"},
+      {"skill": "python", "importance": "critical"},
+      {"skill": "react", "importance": "critical"},
+      {"skill": "node.js", "importance": "critical"},
+      {"skill": "html5", "importance": "important"},
+      {"skill": "css3", "importance": "important"},
+      {"skill": "rest api", "importance": "important"},
+      {"skill": "mongodb", "importance": "important"},
+      {"skill": "git", "importance": "important"},
+      {"skill": "docker", "importance": "important"}
+    ],
+    "typical_education": "Bachelor's in Computer Science or related field",
+    "growth_outlook": "Very high demand for developers who can work on both frontend and backend",
+    "indicative_entry_salary_lpa": "5.0-7.0",
+    "related_roles": ["backend-developer", "frontend-developer", "devops-engineer"],
+    "interview_topics": ["MERN stack", "REST vs GraphQL", "Authentication", "Deployment strategies", "Testing methodologies"]
+  },
+  {
+    "id": "data-analyst",
+    "title": "Data Analyst",
+    "category": "Data & Analytics",
+    "required_skills": [
+      {"skill": "sql", "importance": "critical"},
+      {"skill": "python", "importance": "critical"},
+      {"skill": "excel", "importance": "critical"},
+      {"skill": "tableau", "importance": "important"},
+      {"skill": "power bi", "importance": "important"},
+      {"skill": "statistics", "importance": "important"},
+      {"skill": "data visualization", "importance": "important"},
+      {"skill": "pandas", "importance": "important"},
+      {"skill": "git", "importance": "important"},
+      {"skill": "linux", "importance": "nice_to_have"}
+    ],
+    "typical_education": "Bachelor's in Statistics, Mathematics, Economics or related field",
+    "growth_outlook": "Growing demand for data analysts across all industries",
+    "indicative_entry_salary_lpa": "3.0-4.5",
+    "related_roles": ["data-scientist", "business-analyst", "database-administrator"],
+    "interview_topics": ["SQL queries", "Statistical analysis", "Data cleaning", "Visualization best practices", "Business acumen"]
+  },
+  {
+    "id": "devops-associate",
+    "title": "Cloud/DevOps Associate",
+    "category": "Cloud & DevOps",
+    "required_skills": [
+      {"skill": "linux", "importance": "critical"},
+      {"skill": "docker", "importance": "critical"},
+      {"skill": "kubernetes", "importance": "critical"},
+      {"skill": "aws", "importance": "important"},
+      {"skill": "jenkins", "importance": "important"},
+      {"skill": "git", "importance": "important"},
+      {"skill": "bash scripting", "importance": "important"},
+      {"skill": "terraform", "importance": "important"},
+      {"skill": "monitoring", "importance": "important"},
+      {"skill": "networking", "importance": "important"}
+    ],
+    "typical_education": "Bachelor's in Computer Science, IT or related field + certifications",
+    "growth_outlook": "Rapidly growing demand for cloud and DevOps professionals",
+    "indicative_entry_salary_lpa": "4.0-5.5",
+    "related_roles": ["devops-engineer", "cloud-engineer", "site-reliability-engineer"],
+    "interview_topics": ["Linux administration", "Docker containers", "Kubernetes orchestration", "CI/CD pipelines", "Cloud security"]
+  },
+  {
+    "id": "ui-ux-designer",
+    "title": "UI/UX Designer",
+    "category": "Design",
+    "required_skills": [
+      {"skill": "figma", "importance": "critical"},
+      {"skill": "adobe xd", "importance": "critical"},
+      {"skill": "photoshop", "importance": "important"},
+      {"skill": "illustrator", "importance": "important"},
+      {"skill": "wireframing", "importance": "critical"},
+      {"skill": "prototyping", "importance": "critical"},
+      {"skill": "user research", "importance": "important"},
+      {"skill": "design thinking", "importance": "important"},
+      {"skill": "html5", "importance": "nice_to_have"},
+      {"skill": "css3", "importance": "nice_to_have"}
+    ],
+    "typical_education": "Bachelor's in Design, HCI or related field",
+    "growth_outlook": "Increasing demand for user-centered design professionals",
+    "indicative_entry_salary_lpa": "3.0-4.5",
+    "related_roles": ["frontend-developer", "product-designer", "graphic-designer"],
+    "interview_topics": ["Design portfolio review", "User testing methodologies", "Accessibility standards", "Design systems", "Collaboration skills"]
+  },
+  {
+    "id": "business-analyst",
+    "title": "Business Analyst",
+    "category": "Business & Finance",
+    "required_skills": [
+      {"skill": "sql", "importance": "critical"},
+      {"skill": "excel", "importance": "critical"},
+      {"skill": "power bi", "importance": "important"},
+      {"skill": "tableau", "importance": "important"},
+      {"skill": "documentation", "importance": "critical"},
+      {"skill": "process modeling", "importance": "important"},
+      {"skill": "stakeholder management", "importance": "important"},
+      {"skill": "requirements gathering", "importance": "critical"},
+      {"skill": "git", "importance": "nice_to_have"},
+      {"skill": "jira", "importance": "important"}
+    ],
+    "typical_education": "Bachelor's in Business, Economics or related field",
+    "growth_outlook": "Steady demand for analysts who bridge business and technology",
+    "indicative_entry_salary_lpa": "3.5-5.0",
+    "related_roles": ["data-analyst", "project-manager", "consultant"],
+    "interview_topics": ["Requirements documentation", "Process improvement", "Stakeholder communication", "Analysis techniques", "Domain knowledge"]
+  },
+  {
+    "id": "digital-marketing-executive",
+    "title": "Digital Marketing Executive",
+    "category": "Marketing",
+    "required_skills": [
+      {"skill": "social media marketing", "importance": "critical"},
+      {"skill": "google analytics", "importance": "critical"},
+      {"skill": "seo", "importance": "critical"},
+      {"skill": "sem", "importance": "important"},
+      {"skill": "content marketing", "importance": "important"},
+      {"skill": "email marketing", "importance": "important"},
+      {"skill": "google ads", "importance": "important"},
+      {"skill": "facebook ads", "importance": "important"},
+      {"skill": "canva", "importance": "important"},
+      {"skill": "ms excel", "importance": "important"}
+    ],
+    "typical_education": "Bachelor's in Marketing, Communications or related field",
+    "growth_outlook": "High growth in digital marketing roles across industries",
+    "indicative_entry_salary_lpa": "2.5-4.0",
+    "related_roles": ["content-writer", "seo-specialist", "social-media-manager"],
+    "interview_topics": ["Campaign analytics", "SEO fundamentals", "Social media algorithms", "Ad platform expertise", "ROI measurement"]
+  }
+]

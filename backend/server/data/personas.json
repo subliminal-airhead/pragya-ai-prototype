@@ -1,0 +1,104 @@
+[
+  {
+    "id": "persona_divyansh",
+    "name": "Divyansh Joshi",
+    "email": "divyansh.joshi@example.com",
+    "phone": "+91 98765 43210",
+    "persona_type": "Final-year B.Tech CS with decent projects but weak resume",
+    "headline": "B.Tech CSE AI & Data Science Candidate",
+    "university": "Rajiv Gandhi Proudyogiki Vishwavidyalaya (RGPV) / Bhopal",
+    "degree": "Bachelor of Technology (B.Tech)",
+    "major": "CSE AI & Data Science",
+    "grad_year": "2027",
+    "cgpa": "8.4 / 10.0",
+    "location": "Bhopal, Madhya Pradesh",
+    "target_role": "Software Development Engineer",
+    "interests": ["Backend Systems", "FastAPI", "Databases", "AI Infrastructure"],
+    "skills": [
+      { "name": "Python", "level": "Advanced", "verified": true },
+      { "name": "SQL", "level": "Intermediate", "verified": true },
+      { "name": "Java", "level": "Intermediate", "verified": true },
+      { "name": "React", "level": "Intermediate", "verified": true },
+      { "name": "Git", "level": "Intermediate", "verified": true },
+      { "name": "Problem Solving", "level": "Advanced", "verified": true }
+    ],
+    "projects": [
+      {
+        "title": "Student Expense Tracking API",
+        "tech_stack": ["Python", "FastAPI", "SQLite", "Pytest"],
+        "bullets": [
+          "Worked on backend API using Python and helped deploy endpoints.",
+          "Connected SQLite database and created tables for student transactions.",
+          "Wrote basic test cases to check if login works."
+        ]
+      }
+    ],
+    "raw_resume_text": "Divyansh Joshi | divyansh.joshi@example.com | +91 98765 43210 | Bhopal, MP\nEDUCATION:\nB.Tech in Computer Science & Engineering (AI & Data Science)\nGraduation: 2027 | CGPA: 8.4 / 10.0\nSKILLS:\nPython, SQL, Java, React, Git, Problem Solving\nPROJECTS:\nStudent Expense API: Worked on backend API in Python. Connected database and created transaction records. Wrote basic unit tests."
+  },
+  {
+    "id": "persona_pooja",
+    "name": "Pooja Sharma",
+    "email": "pooja.sharma@example.com",
+    "phone": "+91 98261 54321",
+    "persona_type": "B.Com / BA student with no tech background seeking modern employability",
+    "headline": "Commerce Graduate Transitioning to Data & Business Analytics",
+    "university": "Barkatullah University, Bhopal",
+    "degree": "Bachelor of Commerce (B.Com)",
+    "major": "Financial Accounting & Business Studies",
+    "grad_year": "2026",
+    "cgpa": "7.8 / 10.0",
+    "location": "Indore, Madhya Pradesh",
+    "target_role": "Data Analyst & Business Intelligence",
+    "interests": ["Data Analytics", "Financial Reporting", "Govt Opportunities", "Skill India"],
+    "skills": [
+      { "name": "Excel / Spreadsheets", "level": "Advanced", "verified": true },
+      { "name": "Problem Solving", "level": "Intermediate", "verified": true },
+      { "name": "Accounting", "level": "Advanced", "verified": true },
+      { "name": "Business Communication", "level": "Advanced", "verified": true }
+    ],
+    "projects": [
+      {
+        "title": "SME Financial Audit & Revenue Model",
+        "tech_stack": ["MS Excel", "Financial Statements", "Pivot Tables"],
+        "bullets": [
+          "Analyzed quarterly balance sheets for 3 local retail enterprises.",
+          "Built spreadsheet dashboards tracking inventory turnover and overdue receivables."
+        ]
+      }
+    ],
+    "raw_resume_text": "Pooja Sharma | pooja.sharma@example.com | Indore, MP\nEDUCATION: B.Com from Barkatullah University, Bhopal (2026) | 7.8 CGPA\nSKILLS: Advanced Excel, VLOOKUP, Pivot Tables, Financial Accounting, Communication\nPROJECTS: Audited retail store cashflow ledgers in Excel."
+  },
+  {
+    "id": "persona_rahul",
+    "name": "Rahul Verma",
+    "email": "rahul.verma@example.com",
+    "phone": "+91 97523 11223",
+    "persona_type": "Polytechnic Diploma holder from smaller MP town",
+    "headline": "Polytechnic Diploma Holder Seeking MMSKY / NAPS Apprenticeship",
+    "university": "Government Polytechnic College, Sagar, MP",
+    "degree": "Polytechnic Diploma",
+    "major": "Computer Engineering & Electronics",
+    "grad_year": "2025",
+    "cgpa": "7.6 / 10.0",
+    "location": "Sagar / Jabalpur, Madhya Pradesh",
+    "target_role": "Digital e-Governance & Public Tech Associate",
+    "interests": ["MMSKY Scheme", "Apprenticeships", "Hardware & Networking", "Web Tech"],
+    "skills": [
+      { "name": "Hardware & Networking", "level": "Advanced", "verified": true },
+      { "name": "Linux", "level": "Intermediate", "verified": true },
+      { "name": "Web Development", "level": "Beginner", "verified": true },
+      { "name": "SQL", "level": "Beginner", "verified": true }
+    ],
+    "projects": [
+      {
+        "title": "Local College Network Topology & Server Setup",
+        "tech_stack": ["Linux", "LAN Routing", "Apache Server"],
+        "bullets": [
+          "Configured local subnet routing and static IP leases for 40 laboratory workstations.",
+          "Deployed local intranet file sharing service on Ubuntu server."
+        ]
+      }
+    ],
+    "raw_resume_text": "Rahul Verma | rahul.verma@example.com | Sagar, MP\nEDUCATION: Polytechnic Diploma in Computer Engineering, Govt Polytechnic Sagar (2025)\nSKILLS: Computer Hardware, Linux CLI, Basic HTML/CSS, Networking, Troubleshooting\nGOAL: Enroll in MP Mukhyamantri Seekho Kamao Yojana (MMSKY) for industrial on-the-job training."
+  }
+]

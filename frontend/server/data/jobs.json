@@ -1,0 +1,107 @@
+[
+  {
+    "id": "opp_abc_tech_software",
+    "title": "Software Engineering Intern (Backend / Python)",
+    "company": "ABC Technologies",
+    "location": "Bhopal / Remote",
+    "type": "Internship",
+    "workplace_type": "Hybrid",
+    "stipend_range": "₹25,000 / month",
+    "deadline": "Oct 15, 2026",
+    "posted_date": "2 days ago",
+    "description": "ABC Technologies is hiring a Backend Engineering Intern to develop RESTful microservices, optimize database queries, and contribute to automated CI/CD pipelines.",
+    "apply_url": "https://careers.abctechnologies.com/jobs/intern-backend-bhopal",
+    "requirements": [
+      { "requirement": "Python programming and OOP fundamentals", "mandatory": true, "key_skill": "Python" },
+      { "requirement": "SQL query writing and relational database indexing", "mandatory": true, "key_skill": "SQL" },
+      { "requirement": "Git version control and collaborative pull requests", "mandatory": true, "key_skill": "Git" },
+      { "requirement": "REST API construction with FastAPI or Flask", "mandatory": false, "key_skill": "REST APIs" },
+      { "requirement": "B.Tech / B.E. / MCA in progress or recently graduated", "mandatory": true, "key_skill": "Education" }
+    ],
+    "matched_skills": ["Python", "SQL", "Git"],
+    "missing_skills": ["REST APIs", "System Design"]
+  },
+  {
+    "id": "opp_persistent_cloud_trainee",
+    "title": "Cloud & Software Trainee Engineer",
+    "company": "Persistent Systems",
+    "location": "Indore / Pune",
+    "type": "Full-time",
+    "workplace_type": "Hybrid",
+    "stipend_range": "₹5,20,000 - ₹7,00,000 / year",
+    "deadline": "Oct 28, 2026",
+    "posted_date": "3 days ago",
+    "description": "Join Persistent's enterprise engineering practice. Work on cloud-native applications, microservice testing, and scalable database backends.",
+    "apply_url": "https://www.persistent.com/careers/early-careers",
+    "requirements": [
+      { "requirement": "B.Tech/BE in CS, IT, AI or related engineering stream with >=60% throughout", "mandatory": true, "key_skill": "Education" },
+      { "requirement": "Strong fundamentals in Data Structures & Algorithms", "mandatory": true, "key_skill": "DSA" },
+      { "requirement": "Proficiency in Python or Java", "mandatory": true, "key_skill": "Python" },
+      { "requirement": "Familiarity with cloud platforms (AWS/Azure) or Docker", "mandatory": false, "key_skill": "Docker" }
+    ],
+    "matched_skills": ["Python", "SQL", "Problem Solving"],
+    "missing_skills": ["DSA", "Docker"]
+  },
+  {
+    "id": "opp_frontend_intern_bhopal",
+    "title": "Frontend Developer Intern (React / TypeScript)",
+    "company": "ABC Labs",
+    "location": "Bhopal (MP) / Hybrid",
+    "type": "Internship",
+    "workplace_type": "Hybrid",
+    "stipend_range": "₹20,000 / month",
+    "deadline": "Oct 20, 2026",
+    "posted_date": "4 days ago",
+    "description": "Craft responsive web applications, modular component architectures, and data visualization interfaces using React, TypeScript, and modern CSS frameworks.",
+    "apply_url": "https://abclabs.io/careers/frontend-intern",
+    "requirements": [
+      { "requirement": "React & modern JavaScript (ES6+) hands-on project proof", "mandatory": true, "key_skill": "React" },
+      { "requirement": "Responsive styling with Tailwind CSS or CSS Modules", "mandatory": true, "key_skill": "Tailwind CSS" },
+      { "requirement": "Git branching and team collaboration workflow", "mandatory": true, "key_skill": "Git" },
+      { "requirement": "Understanding of asynchronous API data fetching", "mandatory": true, "key_skill": "REST APIs" }
+    ],
+    "matched_skills": ["React", "Git", "Problem Solving"],
+    "missing_skills": ["TypeScript", "REST APIs"]
+  },
+  {
+    "id": "opp_nic_mp_egov_fellow",
+    "title": "e-Governance Software Fellow",
+    "company": "National Informatics Centre (NIC) MP State Centre",
+    "location": "Bhopal, Madhya Pradesh",
+    "type": "Internship / Fellowship",
+    "workplace_type": "On-site",
+    "stipend_range": "₹22,000 / month",
+    "deadline": "Nov 05, 2026",
+    "posted_date": "1 week ago",
+    "description": "Contribute to Madhya Pradesh citizen digital public infrastructure, database performance tuning, and secure API gateways under technical leads at NIC State Headquarters.",
+    "apply_url": "https://mp.nic.in/fellowships",
+    "requirements": [
+      { "requirement": "B.Tech / MCA student or graduate resident in Madhya Pradesh", "mandatory": true, "key_skill": "Education" },
+      { "requirement": "SQL database optimization and schema design", "mandatory": true, "key_skill": "SQL" },
+      { "requirement": "Understanding of secure RESTful APIs and authentication", "mandatory": true, "key_skill": "REST APIs" },
+      { "requirement": "Clean record and academic integrity verification", "mandatory": true, "key_skill": "Problem Solving" }
+    ],
+    "matched_skills": ["SQL", "Python", "Problem Solving"],
+    "missing_skills": ["REST APIs", "Database Management"]
+  },
+  {
+    "id": "opp_open_source_contributor",
+    "title": "Open Source Core Contributor (Global / Remote)",
+    "company": "FastAPI & Python Ecosystem Foundation",
+    "location": "Remote / India Flexible",
+    "type": "Internship / Fellowship",
+    "workplace_type": "Remote",
+    "stipend_range": "₹30,000 / month grant",
+    "deadline": "Rolling",
+    "posted_date": "1 week ago",
+    "description": "Contribute documentation, reproducible bug fixes, and feature benchmarks to leading open-source developer tooling and async Python web frameworks.",
+    "apply_url": "https://github.com/fastapi/fastapi",
+    "requirements": [
+      { "requirement": "Demonstrated GitHub pull requests in open repositories", "mandatory": true, "key_skill": "Git" },
+      { "requirement": "Python 3.10+ async syntax and type annotations", "mandatory": true, "key_skill": "Python" },
+      { "requirement": "Unit testing using Pytest", "mandatory": false, "key_skill": "Testing" }
+    ],
+    "matched_skills": ["Python", "Git", "Problem Solving"],
+    "missing_skills": ["Testing", "REST APIs"]
+  }
+]

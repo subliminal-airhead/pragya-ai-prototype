@@ -1,0 +1,8 @@
+{
+  "name": "Campus to Corporate - AI Career Readiness Platform",
+  "description": "AI-Powered Career Readiness & Employability Platform with personalized roadmaps, curated MP/India courses, skill gap diagnostics, government schemes, ATS resume scoring, and mock interviews.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

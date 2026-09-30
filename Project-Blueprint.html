@@ -1,0 +1,994 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}</style><style>:root{color-scheme:light dark;--md-bg:#fff;--md-text:rgba(0,0,0,.8);--md-muted:rgba(0,0,0,.6);--md-fill:rgba(0,0,0,.04);--md-fill-strong:rgba(0,0,0,.06);--md-rule:rgba(0,0,0,.1);--md-rule-strong:rgba(0,0,0,.16);--md-link:hsl(210 100% 45%)}@media (prefers-color-scheme:dark){:root:where(:not([data-theme="light"])){--md-bg:#0d0d0d;--md-text:rgba(255,255,255,.85);--md-muted:rgba(255,255,255,.6);--md-fill:rgba(255,255,255,.06);--md-fill-strong:rgba(255,255,255,.09);--md-rule:rgba(255,255,255,.14);--md-rule-strong:rgba(255,255,255,.22);--md-link:hsl(210 100% 72%)}}:root[data-theme="dark"]{color-scheme:dark;--md-bg:#0d0d0d;--md-text:rgba(255,255,255,.85);--md-muted:rgba(255,255,255,.6);--md-fill:rgba(255,255,255,.06);--md-fill-strong:rgba(255,255,255,.09);--md-rule:rgba(255,255,255,.14);--md-rule-strong:rgba(255,255,255,.22);--md-link:hsl(210 100% 72%)}:root[data-theme="light"]{color-scheme:light}@media print{:root,:root[data-theme="dark"]{color-scheme:light;--md-bg:#fff;--md-text:rgba(0,0,0,.8);--md-muted:rgba(0,0,0,.6);--md-fill:rgba(0,0,0,.04);--md-fill-strong:rgba(0,0,0,.06);--md-rule:rgba(0,0,0,.1);--md-rule-strong:rgba(0,0,0,.16);--md-link:hsl(210 100% 45%)}}body{background:var(--md-bg);color:var(--md-text);max-width:720px;margin:0 auto;padding:32px;display:flex;flex-direction:column;gap:10px;font:14px/1.55 -apple-system,BlinkMacSystemFont,'SF Pro','Segoe UI',sans-serif;overflow-wrap:break-word}body>:first-child{margin-top:0}h1,h2,h3,h4,h5,h6{margin:6px 0 0;line-height:1.25;font-weight:600;text-wrap:balance}h1{font-size:1.35em}h2{font-size:1.15em;color:var(--md-muted)}h3,h4,h5,h6{font-size:1em}p,ul,ol,blockquote,table,pre,hr{margin:0}strong{font-weight:600}a{color:var(--md-link);text-decoration:none}a:hover{text-decoration:underline}ul,ol{display:flex;flex-direction:column;gap:6px;padding-left:22px}ul{list-style:disc}ol{list-style:decimal}:is(li,td,th)>*+:is(p,ul,ol,blockquote){margin-top:6px}blockquote{display:flex;flex-direction:column;gap:10px;border-left:2px solid var(--md-rule);padding-left:10px;color:var(--md-muted)}:not(pre)>code{background:var(--md-fill);padding:1px 3px;border-radius:4px;font:.92em 'SF Mono',ui-monospace,Menlo,Consolas,monospace}a>code{background:none;color:inherit}pre{background:var(--md-fill);padding:10px 12px;border-radius:6px;overflow-x:auto;font:12px/1.5 'SF Mono',ui-monospace,Menlo,Consolas,monospace;margin-block:4px}pre code{background:none;padding:0;font:inherit}table{width:100%;border-collapse:separate;border-spacing:2px;font:inherit}th,td{padding:6px 8px;border-radius:3px;text-align:left;vertical-align:top}th{background:var(--md-fill-strong);font-weight:600}td{background:var(--md-fill)}:is(th,td) :not(pre)>code{background:transparent}hr{border:0;border-top:1px solid var(--md-rule-strong);margin-block:10px}img{max-width:100%;height:auto;border-radius:4px}</style>
+</head><body>
+<h1>Campus to Corporate: Project Blueprint</h1>
+<p><strong>AI-Powered Career Readiness &amp; Employability Platform</strong> · Hackathon Challenge 1
+Backend: FastAPI (Python 3.11+) · Frontend: Next.js + TypeScript + Tailwind CSS</p>
+<blockquote>
+<p>Judging lens: <em>&quot;Does this make a student more employable?&quot;</em> Every design choice below serves that question.</p>
+</blockquote>
+<hr>
+<h2>1. Product summary</h2>
+<p><strong>One-liner:</strong> Upload a resume, get a personalised, India-specific roadmap from your current profile to a job-ready one, with real courses, real internships, and real government schemes.</p>
+<p><strong>Core flow:</strong> <code>Resume in → Profile → Career matches → Skill gaps → Learning path → Opportunities + Govt schemes → Improved resume → Mock interview</code></p>
+<p><strong>Differentiator:</strong> the LLM reasons over a curated MP/India dataset and never invents courses, schemes, or jobs. Every recommendation is a real, clickable entry.</p>
+<h3>Demo personas (build these first)</h3>
+<table>
+<thead>
+<tr>
+<th>Persona</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Final-year B.Tech CS, decent projects, weak resume</td>
+<td>Shows the resume score jump</td>
+</tr>
+<tr>
+<td>BCom/BA student, no tech background, wants a career</td>
+<td>Shows the career path recommender and govt schemes</td>
+</tr>
+<tr>
+<td>Diploma holder from a smaller MP town</td>
+<td>Shows apprenticeships, PMKVY, state schemes</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>2. Feature map</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Capability</th>
+<th>Screen</th>
+<th>Backend endpoint</th>
+<th>Depth</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Profile analysis</td>
+<td>Start, Profile confirm</td>
+<td><code>POST /api/profile/parse</code></td>
+<td>Full</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Career paths</td>
+<td>Roadmap, Careers tab</td>
+<td><code>POST /api/careers/recommend</code></td>
+<td>Full</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Skill gaps</td>
+<td>Roadmap, Skill Gaps tab</td>
+<td><code>POST /api/skills/gap</code></td>
+<td>Full</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Courses</td>
+<td>Roadmap, Learning Path tab</td>
+<td><code>POST /api/courses/recommend</code></td>
+<td>Full</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Internships/jobs</td>
+<td>Roadmap, Opportunities tab</td>
+<td><code>POST /api/opportunities/match</code></td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Resume improvement</td>
+<td>Resume page</td>
+<td><code>POST /api/resume/review</code>, <code>/rewrite</code>, export</td>
+<td>Full</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Mock interview</td>
+<td>Interview page</td>
+<td><code>POST /api/interview/*</code></td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Govt opportunities</td>
+<td>Roadmap, Govt tab</td>
+<td><code>POST /api/govt/match</code></td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>All</td>
+<td>Chained roadmap</td>
+<td>Roadmap (streamed)</td>
+<td><code>POST /api/roadmap/generate</code> (SSE)</td>
+<td>The demo path</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>3. System architecture</h2>
+<pre class="mermaid">flowchart LR
+  U[Student browser] --&gt; FE[Next.js + Tailwind]
+  FE -- REST + SSE, X-Session-ID --&gt; API[FastAPI]
+  API --&gt; SVC[Services: parser, gap analysis, scoring, retrieval]
+  SVC --&gt; LLM[llm.py: Groq / Gemini / Ollama / Mock]
+  SVC --&gt; VDB[(ChromaDB)]
+  SVC --&gt; DB[(SQLite)]
+  SVC --&gt; DATA[/data/*.json: roles, courses, schemes, jobs/]
+</pre>
+<h3>Main demo sequence</h3>
+<pre class="mermaid">sequenceDiagram
+  participant S as Student
+  participant F as Frontend
+  participant B as Backend
+  S-&gt;&gt;F: Upload resume + pick interests
+  F-&gt;&gt;B: POST /api/profile/parse (multipart)
+  B--&gt;&gt;F: profile_id + StudentProfile
+  S-&gt;&gt;F: Review / correct profile, choose target role
+  F-&gt;&gt;B: POST /api/roadmap/generate (SSE)
+  B--&gt;&gt;F: event: step (profile, careers, gaps, courses, opportunities, govt, score)
+  B--&gt;&gt;F: event: done {roadmap_id}
+  F-&gt;&gt;S: Tabbed roadmap renders progressively
+  S-&gt;&gt;F: Improve resume / start interview
+</pre>
+<p>Parsing is a separate step from roadmap generation so the student can correct extraction mistakes before the expensive chain runs. This is a small refinement to the earlier &quot;generate does everything&quot; idea.</p>
+<hr>
+<h2>4. Full tech stack</h2>
+<h3>Backend (owner: backend lead)</h3>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Choice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Language / API</td>
+<td>Python 3.11+, FastAPI, Uvicorn, Pydantic v2</td>
+</tr>
+<tr>
+<td>LLM</td>
+<td>Groq (Llama 3.3 70B) for demo, Gemini fallback, Ollama for dev, <code>MOCK_LLM=1</code></td>
+</tr>
+<tr>
+<td>Parsing</td>
+<td>PyMuPDF, python-docx</td>
+</tr>
+<tr>
+<td>Data</td>
+<td>SQLite (SQLModel), ChromaDB, JSON datasets</td>
+</tr>
+<tr>
+<td>Embeddings</td>
+<td><code>paraphrase-multilingual-MiniLM-L12-v2</code> (Hindi-capable)</td>
+</tr>
+<tr>
+<td>Export</td>
+<td>WeasyPrint (PDF), python-docx (DOCX)</td>
+</tr>
+<tr>
+<td>Streaming</td>
+<td><code>sse-starlette</code></td>
+</tr>
+</tbody>
+</table>
+<h3>Frontend (owner: frontend lead)</h3>
+<table>
+<thead>
+<tr>
+<th>Concern</th>
+<th>Choice</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Framework</td>
+<td><strong>Next.js (App Router) + TypeScript</strong></td>
+<td>File routing, free Vercel deploy, strong AI-tool support for vibe coding</td>
+</tr>
+<tr>
+<td>Styling</td>
+<td><strong>Tailwind CSS</strong> (v4 if <code>shadcn</code> init supports it cleanly, else v3)</td>
+<td>Requirement</td>
+</tr>
+<tr>
+<td>Components</td>
+<td><strong>shadcn/ui</strong> (Radix under the hood)</td>
+<td>Accessible, good-looking defaults, copy-paste ownership</td>
+</tr>
+<tr>
+<td>Icons</td>
+<td><code>lucide-react</code></td>
+<td>Ships with shadcn</td>
+</tr>
+<tr>
+<td>Server state</td>
+<td><strong>TanStack Query</strong></td>
+<td>Caching, loading and error states, retries</td>
+</tr>
+<tr>
+<td>Client state</td>
+<td><strong>Zustand</strong> (persisted)</td>
+<td><code>sessionId</code>, profile, chosen role, roadmap</td>
+</tr>
+<tr>
+<td>API client</td>
+<td><strong><code>openapi-typescript</code> + <code>openapi-fetch</code></strong></td>
+<td>Types generated from FastAPI's OpenAPI. This is the main &quot;seamless&quot; lever</td>
+</tr>
+<tr>
+<td>SSE</td>
+<td><code>@microsoft/fetch-event-source</code></td>
+<td>Native <code>EventSource</code> only supports GET. This supports POST and custom headers</td>
+</tr>
+<tr>
+<td>Forms / validation</td>
+<td><code>react-hook-form</code> + <code>zod</code></td>
+<td>Interests form, profile edit</td>
+</tr>
+<tr>
+<td>File upload</td>
+<td><code>react-dropzone</code></td>
+<td>Drag and drop resume</td>
+</tr>
+<tr>
+<td>Charts</td>
+<td><code>recharts</code></td>
+<td>Score ring, skill radar, before/after</td>
+</tr>
+<tr>
+<td>Motion</td>
+<td><code>framer-motion</code> (sparingly)</td>
+<td>Progress reveal and tab transitions</td>
+</tr>
+<tr>
+<td>Toasts</td>
+<td><code>sonner</code></td>
+<td>Errors and success</td>
+</tr>
+<tr>
+<td>Fonts</td>
+<td>Inter + Noto Sans Devanagari (via <code>next/font</code>)</td>
+<td>Hindi text renders properly</td>
+</tr>
+<tr>
+<td>Deploy</td>
+<td>Vercel (frontend) + Render or HF Spaces (backend)</td>
+<td>Free, public URL</td>
+</tr>
+</tbody>
+</table>
+<h3>Explicitly not used</h3>
+<p>Redux, GraphQL, NextAuth or any login system, and a state-management library beyond Zustand. Auth is a session UUID only.</p>
+<hr>
+<h2>5. Monorepo layout</h2>
+<pre><code>career-platform/
+├── backend/                 # see backend plan
+├── frontend/
+│   ├── src/
+│   │   ├── app/
+│   │   │   ├── layout.tsx           # fonts, providers, toaster
+│   │   │   ├── page.tsx             # landing + demo persona buttons
+│   │   │   ├── start/page.tsx       # upload + interests
+│   │   │   ├── profile/page.tsx     # confirm/edit parsed profile
+│   │   │   ├── roadmap/page.tsx     # streamed roadmap, tabs
+│   │   │   ├── resume/page.tsx      # review, rewrite, export
+│   │   │   ├── interview/page.tsx   # chat interview
+│   │   │   └── about/page.tsx       # NEP / Skill India alignment
+│   │   ├── components/
+│   │   │   ├── ui/                  # shadcn primitives
+│   │   │   ├── roadmap/             # ProgressStepper, ScoreRing, CareerCard,
+│   │   │   │                        # SkillGapList, CourseCard, OpportunityCard, SchemeCard
+│   │   │   ├── resume/              # BeforeAfter, CritiqueList, ExportButtons
+│   │   │   ├── interview/           # ChatBubble, FeedbackPanel, MicButton
+│   │   │   └── common/              # ApiErrorBoundary, WakingServerBanner, Skeletons
+│   │   ├── lib/
+│   │   │   ├── api/
+│   │   │   │   ├── schema.d.ts      # GENERATED, do not hand-edit
+│   │   │   │   ├── client.ts        # openapi-fetch instance + middleware
+│   │   │   │   ├── sse.ts           # roadmap stream helper
+│   │   │   │   └── errors.ts        # ApiError + code → message map
+│   │   │   ├── store.ts             # Zustand
+│   │   │   └── utils.ts
+│   │   └── hooks/                   # useRoadmapStream, useProfileParse, ...
+│   ├── .env.local.example
+│   └── package.json
+├── fixtures/                # shared sample JSON responses (both sides use these)
+├── docs/                    # this blueprint, API notes, pitch
+└── README.md
+</code></pre>
+<hr>
+<h2>6. Frontend blueprint</h2>
+<h3>Screens</h3>
+<table>
+<thead>
+<tr>
+<th>Route</th>
+<th>Purpose</th>
+<th>Key UI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/</code></td>
+<td>Landing, first impression</td>
+<td>Hero, one CTA, <strong>three &quot;Try a demo profile&quot; buttons</strong>, NEP/Skill India badges</td>
+</tr>
+<tr>
+<td><code>/start</code></td>
+<td>Input</td>
+<td>Dropzone (PDF/DOCX), paste-text fallback, interests chips, optional target role</td>
+</tr>
+<tr>
+<td><code>/profile</code></td>
+<td>Trust step</td>
+<td>Editable parsed profile (education, skills, projects), &quot;Looks right, build my roadmap&quot;</td>
+</tr>
+<tr>
+<td><code>/roadmap</code></td>
+<td>The demo centrepiece</td>
+<td>Streaming stepper, then tabs: Overview, Careers, Skill Gaps, Learning Path, Opportunities, Govt Schemes</td>
+</tr>
+<tr>
+<td><code>/resume</code></td>
+<td>Before/after</td>
+<td>Score before vs after, critique list, side-by-side, PDF/DOCX download</td>
+</tr>
+<tr>
+<td><code>/interview</code></td>
+<td>Practice</td>
+<td>Role and difficulty pick, chat UI, per-answer feedback, final summary</td>
+</tr>
+</tbody>
+</table>
+<h3>UX rules</h3>
+<ul>
+<li><strong>Never show a blank screen.</strong> Use skeletons on every data area, and the stepper during streaming.</li>
+<li><strong>Progressive reveal.</strong> Each SSE step fills its tab as it arrives, so the student sees value in seconds.</li>
+<li><strong>Every card links out.</strong> Courses, jobs, and schemes have an &quot;Open&quot; button with the real URL.</li>
+<li><strong>Score is the hero number.</strong> A 0 to 100 employability ring with a breakdown, and a &quot;+X after improvements&quot; delta.</li>
+<li><strong>Mobile-first.</strong> Judges may open the link on a phone. Use responsive grid classes and test at 375px.</li>
+<li><strong>Hindi toggle (stretch).</strong> Only static UI labels, via a simple dictionary. Don't build full i18n.</li>
+</ul>
+<h3>Design tokens (Tailwind)</h3>
+<pre><code class="language-css">/* app/globals.css (Tailwind v4 style; in v3 put these in tailwind.config) */
+@theme {
+  --color-brand-600: #4f46e5;   /* indigo: primary actions */
+  --color-brand-50:  #eef2ff;
+  --color-accent-500: #f59e0b;  /* saffron/amber: govt + highlights */
+  --color-success-600: #059669; /* green: scores up, eligible */
+  --font-sans: var(--font-inter), var(--font-devanagari), system-ui, sans-serif;
+}
+</code></pre>
+<p>Neutrals are the built-in <code>slate</code> scale. Cards are <code>rounded-2xl border bg-white shadow-sm</code>, page background <code>bg-slate-50</code>. Use one primary colour and one accent, no more.</p>
+<h3>State model (Zustand, persisted to <code>localStorage</code>)</h3>
+<pre><code class="language-ts">type AppState = {
+  sessionId: string;            // uuid, created on first load
+  profileId?: string;
+  profile?: StudentProfile;     // from generated types
+  targetRole?: string;
+  roadmapId?: string;
+  setProfile(p: StudentProfile, id: string): void;
+  reset(): void;                // &#34;Start over&#34; + calls DELETE /api/session
+};
+</code></pre>
+<p>Refreshing <code>/roadmap</code> must not lose work: on mount, if <code>roadmapId</code> exists, call <code>GET /api/roadmap/{id}</code> instead of re-streaming.</p>
+<hr>
+<h2>7. Frontend–backend integration contract</h2>
+<p>This section is the source of truth for both sides. Changes go through the change protocol in 7.9.</p>
+<h3>7.1 Conventions (both sides)</h3>
+<table>
+<thead>
+<tr>
+<th>Rule</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Base URL</td>
+<td><code>NEXT_PUBLIC_API_URL</code> (e.g. <code>http://localhost:8000</code>)</td>
+</tr>
+<tr>
+<td>Prefix</td>
+<td>All routes under <code>/api</code></td>
+</tr>
+<tr>
+<td>JSON casing</td>
+<td><strong>snake_case end to end.</strong> No camelCase conversion anywhere</td>
+</tr>
+<tr>
+<td>Session</td>
+<td>Frontend generates a UUID once, sends header <code>X-Session-ID</code> on <strong>every</strong> request</td>
+</tr>
+<tr>
+<td>IDs</td>
+<td>Strings (UUIDs)</td>
+</tr>
+<tr>
+<td>Dates</td>
+<td>ISO 8601 strings</td>
+</tr>
+<tr>
+<td>Empty lists</td>
+<td><code>[]</code>, never <code>null</code></td>
+</tr>
+<tr>
+<td>Every route</td>
+<td>Has a <code>response_model</code>. No untyped dict responses</td>
+</tr>
+</tbody>
+</table>
+<h3>7.2 Backend requirements for seamlessness (backend lead checklist)</h3>
+<pre><code class="language-python"># main.py
+from fastapi import FastAPI
+from fastapi.routing import APIRoute
+from fastapi.middleware.cors import CORSMiddleware
+
+def unique_id(route: APIRoute) -&gt; str:
+    return route.name   # clean TS function names, e.g. parseProfile
+
+app = FastAPI(generate_unique_id_function=unique_id)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=settings.ALLOWED_ORIGINS,               # http://localhost:3000, prod URL
+    allow_origin_regex=r&#34;https://.*\.vercel\.app&#34;,        # Vercel preview URLs
+    allow_methods=[&#34;*&#34;],
+    allow_headers=[&#34;*&#34;],                                  # includes X-Session-ID
+    expose_headers=[&#34;Content-Disposition&#34;, &#34;X-Request-ID&#34;],
+)
+</code></pre>
+<ul>
+<li>Name every route function meaningfully (<code>parse_profile</code>, <code>generate_roadmap</code>), because it becomes the client function name.</li>
+<li>Register a custom exception handler so <strong>all</strong> errors use the envelope in 7.5, including FastAPI's default 422.</li>
+<li><code>GET /health</code> returns <code>{&quot;status&quot;:&quot;ok&quot;,&quot;llm&quot;:&quot;groq&quot;,&quot;mock&quot;:false}</code> and is cheap.</li>
+<li>Return <code>503</code> with <code>LLM_UNAVAILABLE</code> if every provider fails, and never a stack trace.</li>
+</ul>
+<h3>7.3 Endpoint table</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Path</th>
+<th>Request</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/health</code></td>
+<td>none</td>
+<td><code>Health</code></td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/profile/parse</code></td>
+<td>multipart <code>file</code> <strong>or</strong> JSON <code>{text}</code></td>
+<td><code>ProfileParseResponse {profile_id, profile}</code></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td><code>/api/profile/{profile_id}</code></td>
+<td><code>StudentProfile</code> (edited)</td>
+<td><code>StudentProfile</code></td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/roadmap/generate</code></td>
+<td><code>{profile_id, interests[], target_role?}</code></td>
+<td><strong>SSE</strong> stream (7.4)</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/roadmap/{roadmap_id}</code></td>
+<td>none</td>
+<td><code>Roadmap</code> (full, for reload)</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/careers/recommend</code></td>
+<td><code>{profile_id, interests[]}</code></td>
+<td><code>CareerMatch[]</code></td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/skills/gap</code></td>
+<td><code>{profile_id, target_role}</code></td>
+<td><code>SkillGapReport</code></td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/courses/recommend</code></td>
+<td><code>{profile_id, target_role}</code></td>
+<td><code>CourseRec[]</code></td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/opportunities/match</code></td>
+<td><code>{profile_id, target_role?}</code></td>
+<td><code>Opportunity[]</code></td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/govt/match</code></td>
+<td><code>{profile_id}</code></td>
+<td><code>GovtScheme[]</code> (with <code>eligible</code> + <code>reasons</code>)</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/resume/review</code></td>
+<td><code>{profile_id, target_role}</code></td>
+<td><code>ResumeReview {score, breakdown, issues[]}</code></td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/resume/rewrite</code></td>
+<td><code>{profile_id, target_role}</code></td>
+<td><code>ResumeRewrite {resume_id, sections[], score_after}</code></td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/resume/export/{resume_id}?format=pdf|docx</code></td>
+<td>none</td>
+<td>file (blob)</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/interview/start</code></td>
+<td><code>{profile_id, role, difficulty}</code></td>
+<td><code>{interview_id, question}</code></td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/interview/answer</code></td>
+<td><code>{interview_id, answer}</code></td>
+<td><code>{feedback, next_question?}</code></td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/interview/finish</code></td>
+<td><code>{interview_id}</code></td>
+<td><code>InterviewSummary</code></td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td><code>/api/session</code></td>
+<td>none</td>
+<td><code>204</code> (wipes all data for <code>X-Session-ID</code>)</td>
+</tr>
+</tbody>
+</table>
+<p>The individual feature endpoints (careers, gap, courses, and so on) exist for independent calls and testing. The roadmap stream calls the same service functions internally.</p>
+<h3>7.4 SSE stream spec (<code>POST /api/roadmap/generate</code>)</h3>
+<p>Response headers (backend must set): <code>Content-Type: text/event-stream</code>, <code>Cache-Control: no-cache</code>, <code>X-Accel-Buffering: no</code>.</p>
+<pre><code>event: step
+data: {&#34;step&#34;:&#34;careers&#34;,&#34;status&#34;:&#34;started&#34;,&#34;progress&#34;:0.15}
+
+event: step
+data: {&#34;step&#34;:&#34;careers&#34;,&#34;status&#34;:&#34;done&#34;,&#34;progress&#34;:0.30,&#34;data&#34;:[ ...CareerMatch ]}
+
+event: step
+data: {&#34;step&#34;:&#34;gaps&#34;,&#34;status&#34;:&#34;done&#34;,&#34;progress&#34;:0.45,&#34;data&#34;:{ ...SkillGapReport }}
+
+event: done
+data: {&#34;roadmap_id&#34;:&#34;...&#34;}
+
+event: error
+data: {&#34;code&#34;:&#34;LLM_UNAVAILABLE&#34;,&#34;message&#34;:&#34;...&#34;,&#34;step&#34;:&#34;courses&#34;}
+</code></pre>
+<ul>
+<li><strong>Step order (fixed):</strong> <code>careers → gaps → courses → opportunities → govt → score</code></li>
+<li><strong><code>status</code>:</strong> <code>started | done | failed</code>. On <code>failed</code>, the stream continues with remaining steps where possible, so one bad step doesn't kill the roadmap.</li>
+<li>The <code>data</code> payload for each step is exactly the schema of the matching standalone endpoint.</li>
+<li>Send a <code>:keepalive</code> comment every ~10 seconds to survive proxies.</li>
+</ul>
+<p><strong>Frontend consumer</strong> (<code>lib/api/sse.ts</code>):</p>
+<pre><code class="language-ts">import { fetchEventSource } from &#34;@microsoft/fetch-event-source&#34;;
+
+export function streamRoadmap(
+  body: RoadmapRequest,
+  sessionId: string,
+  on: { step: (e: StepEvent) =&gt; void; done: (id: string) =&gt; void; error: (e: ApiErrorBody) =&gt; void },
+  signal: AbortSignal
+) {
+  return fetchEventSource(`${process.env.NEXT_PUBLIC_API_URL}/api/roadmap/generate`, {
+    method: &#34;POST&#34;,
+    headers: { &#34;Content-Type&#34;: &#34;application/json&#34;, &#34;X-Session-ID&#34;: sessionId },
+    body: JSON.stringify(body),
+    signal,
+    openWhenHidden: true,   // keeps stream alive if the tab is backgrounded
+    onmessage(msg) {
+      const data = JSON.parse(msg.data);
+      if (msg.event === &#34;step&#34;) on.step(data);
+      else if (msg.event === &#34;done&#34;) on.done(data.roadmap_id);
+      else if (msg.event === &#34;error&#34;) on.error(data);
+    },
+    onerror(err) { throw err; },   // no silent infinite retry
+  });
+}
+</code></pre>
+<h3>7.5 Error envelope</h3>
+<p>Every non-2xx response, including validation errors:</p>
+<pre><code class="language-json">{ &#34;error&#34;: { &#34;code&#34;: &#34;FILE_TOO_LARGE&#34;, &#34;message&#34;: &#34;Resume must be under 5 MB.&#34;, &#34;details&#34;: {} } }
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>HTTP</th>
+<th><code>code</code></th>
+<th>Frontend behaviour</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>422</td>
+<td><code>VALIDATION_ERROR</code></td>
+<td>Show field errors from <code>details</code></td>
+</tr>
+<tr>
+<td>413</td>
+<td><code>FILE_TOO_LARGE</code></td>
+<td>Toast, reset dropzone</td>
+</tr>
+<tr>
+<td>415</td>
+<td><code>FILE_UNSUPPORTED</code></td>
+<td>Toast: &quot;Use PDF or DOCX, or paste text&quot;</td>
+</tr>
+<tr>
+<td>422</td>
+<td><code>PARSE_FAILED</code></td>
+<td>Offer paste-text fallback</td>
+</tr>
+<tr>
+<td>404</td>
+<td><code>NOT_FOUND</code></td>
+<td>Redirect to <code>/start</code> (stale ID)</td>
+</tr>
+<tr>
+<td>429</td>
+<td><code>RATE_LIMITED</code></td>
+<td>&quot;High demand, retrying…&quot; then auto-retry once after 3 s</td>
+</tr>
+<tr>
+<td>503</td>
+<td><code>LLM_UNAVAILABLE</code></td>
+<td>Show retry button; keep any partial roadmap</td>
+</tr>
+<tr>
+<td>500</td>
+<td><code>INTERNAL</code></td>
+<td>Generic toast, log <code>X-Request-ID</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>lib/api/errors.ts</code> maps <code>code</code> to a friendly message so components never print raw server text.</p>
+<h3>7.6 Type generation workflow (the &quot;seamless&quot; part)</h3>
+<pre><code class="language-bash"># frontend/package.json
+&#34;scripts&#34;: {
+  &#34;gen:api&#34;: &#34;openapi-typescript $NEXT_PUBLIC_API_URL/openapi.json -o src/lib/api/schema.d.ts&#34;
+}
+</code></pre>
+<pre><code class="language-ts">// lib/api/client.ts
+import createClient from &#34;openapi-fetch&#34;;
+import type { paths } from &#34;./schema&#34;;
+
+export const api = createClient&lt;paths&gt;({ baseUrl: process.env.NEXT_PUBLIC_API_URL });
+
+api.use({
+  onRequest({ request }) {
+    request.headers.set(&#34;X-Session-ID&#34;, useApp.getState().sessionId);
+    return request;
+  },
+  async onResponse({ response }) {
+    if (!response.ok) throw await ApiError.from(response);
+  },
+});
+</code></pre>
+<p>Then <code>const { data } = await api.POST(&quot;/api/careers/recommend&quot;, { body })</code> is fully typed. If the backend changes a field, <code>tsc</code> fails immediately and you find the break at build time, not on stage.</p>
+<p>Limitation: multipart upload and the SSE endpoint are only loosely typed by the generator. Hand-write these two thin wrappers (<code>uploadResume</code>, <code>streamRoadmap</code>) and type their payloads from the generated schemas.</p>
+<h3>7.7 File upload and download</h3>
+<ul>
+<li><strong>Upload:</strong> <code>FormData</code> with field <code>file</code>. The client validates type (<code>.pdf</code>, <code>.docx</code>) and size (5 MB) before sending, and the backend re-validates.</li>
+<li><strong>Text fallback:</strong> <code>{ &quot;text&quot;: &quot;...&quot; }</code> JSON to the same endpoint.</li>
+<li><strong>Export:</strong> a plain <code>&lt;a href&gt;</code> can't send the session header, so use fetch, then blob, then a temporary anchor:</li>
+</ul>
+<pre><code class="language-ts">const res = await fetch(`${API}/api/resume/export/${id}?format=pdf`, { headers: { &#34;X-Session-ID&#34;: sid } });
+const blob = await res.blob();
+const url = URL.createObjectURL(blob);
+Object.assign(document.createElement(&#34;a&#34;), { href: url, download: &#34;resume.pdf&#34; }).click();
+URL.revokeObjectURL(url);
+</code></pre>
+<h3>7.8 Environments and config</h3>
+<table>
+<thead>
+<tr>
+<th>Var</th>
+<th>Where</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NEXT_PUBLIC_API_URL</code></td>
+<td>frontend <code>.env.local</code> / Vercel</td>
+<td><code>http://localhost:8000</code> → <code>https://&lt;backend&gt;.onrender.com</code></td>
+</tr>
+<tr>
+<td><code>ALLOWED_ORIGINS</code></td>
+<td>backend env</td>
+<td><code>http://localhost:3000,https://&lt;app&gt;.vercel.app</code></td>
+</tr>
+<tr>
+<td><code>GROQ_API_KEY</code>, <code>GEMINI_API_KEY</code></td>
+<td>backend env only</td>
+<td>never in the frontend, never in git</td>
+</tr>
+<tr>
+<td><code>MOCK_LLM</code></td>
+<td>backend env</td>
+<td><code>1</code> for frontend dev and offline demo</td>
+</tr>
+</tbody>
+</table>
+<p>Ship <code>.env.example</code> files on both sides.</p>
+<p><strong>Cold-start handling:</strong> on first load, the frontend pings <code>/health</code>. If it takes over 3 s, show a <code>WakingServerBanner</code> (&quot;Warming up the server, ~30 s&quot;) instead of a broken-looking page. Ping the backend ~10 minutes before presenting.</p>
+<h3>7.9 Change protocol (prevents integration chaos)</h3>
+<ol>
+<li><strong>Freeze <code>schemas.py</code> on day one.</strong> Backend publishes it and a first <code>openapi.json</code> before writing logic.</li>
+<li>Backend lead can add fields freely. Renaming or removing a field needs a heads-up in the team chat first.</li>
+<li>After any backend schema change: backend lead commits, frontend runs <code>npm run gen:api</code>, and fixes type errors.</li>
+<li>Both sides use <code>/fixtures/*.json</code> (real-shaped sample responses). Frontend can build against fixtures or <code>MOCK_LLM=1</code> with <strong>zero dependence</strong> on API keys or LLM quality.</li>
+<li>One integration checkpoint at the end of each phase (see 9). Don't wait until the end to connect.</li>
+</ol>
+<hr>
+<h2>8. Team roles</h2>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Owns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Backend lead</td>
+<td>FastAPI, LLM layer, retrieval, scoring, deploy backend, OpenAPI contract</td>
+</tr>
+<tr>
+<td>Frontend lead</td>
+<td>Next.js app, Tailwind design, streaming UI, deploy frontend</td>
+</tr>
+<tr>
+<td>Data curator</td>
+<td><code>roles.json</code>, <code>courses.json</code>, internships, govt schemes, link verification. <strong>Start on day one; this is the most underestimated job</strong></td>
+</tr>
+<tr>
+<td>Pitch / QA</td>
+<td>Demo script, personas, slides, bug-bashing, judging-criteria mapping</td>
+</tr>
+</tbody>
+</table>
+<p>If the team is smaller, merge Pitch/QA into the frontend lead and share data curation.</p>
+<hr>
+<h2>9. Build phases and integration checkpoints</h2>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Backend</th>
+<th>Frontend</th>
+<th>Checkpoint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>0. Contract</strong></td>
+<td>Repo, <code>schemas.py</code>, <code>/health</code>, mock mode, CORS</td>
+<td>Next.js + Tailwind + shadcn scaffold, app shell, layout</td>
+<td><code>gen:api</code> works; <code>/health</code> visible in UI</td>
+</tr>
+<tr>
+<td><strong>1. Spine</strong></td>
+<td>Parse, careers, gaps, courses on mock then real data</td>
+<td>Start, Profile, Roadmap tabs on fixtures</td>
+<td>Upload resume, see real roadmap end to end</td>
+</tr>
+<tr>
+<td><strong>2. Stream</strong></td>
+<td><code>/roadmap/generate</code> SSE, persistence, <code>GET /roadmap/{id}</code></td>
+<td>Stepper, progressive tabs, reload-safe</td>
+<td>Full demo path with live progress</td>
+</tr>
+<tr>
+<td><strong>3. Resume</strong></td>
+<td>Review, rewrite, export</td>
+<td>Resume page, before/after, download</td>
+<td>Score delta appears; PDF downloads</td>
+</tr>
+<tr>
+<td><strong>4. Breadth</strong></td>
+<td>Opportunities, govt, interview</td>
+<td>Those tabs and interview chat</td>
+<td>All 8 capabilities reachable</td>
+</tr>
+<tr>
+<td><strong>5. Harden</strong></td>
+<td>Caching, fallbacks, deploy</td>
+<td>Empty/error states, mobile pass, deploy</td>
+<td>Full run on production URLs</td>
+</tr>
+<tr>
+<td><strong>6. Polish</strong></td>
+<td>Voice (stretch)</td>
+<td>Hindi labels, animations, pitch page</td>
+<td>Rehearsed demo</td>
+</tr>
+</tbody>
+</table>
+<p>Do not start phase N+1 before the phase N checkpoint passes on the deployed setup, not just localhost.</p>
+<hr>
+<h2>10. Testing and demo readiness</h2>
+<p><strong>Integration smoke test (run after every merge):</strong></p>
+<ol>
+<li><code>/health</code> returns OK from the deployed frontend</li>
+<li>Upload persona resume 1, then profile, then roadmap streams all six steps</li>
+<li>Refresh <code>/roadmap</code>, and it reloads via <code>GET /roadmap/{id}</code> with no re-stream</li>
+<li>Rewrite resume, score goes up, PDF downloads and opens</li>
+<li>Interview: 3 turns, then summary</li>
+<li>Kill wifi, set <code>MOCK_LLM=1</code>, and the demo path still completes</li>
+</ol>
+<p><strong>Demo-day checklist</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> Backend pinged awake 10 minutes before</li>
+<li><input disabled="" type="checkbox"> All dataset links clicked and verified</li>
+<li><input disabled="" type="checkbox"> Three persona buttons work with one click (no typing on stage)</li>
+<li><input disabled="" type="checkbox"> Tested on a phone and on the venue wifi</li>
+<li><input disabled="" type="checkbox"> Backup: screen recording of the full flow, plus the local mock build ready</li>
+<li><input disabled="" type="checkbox"> <code>/about</code> page mapping features to NEP 2020, Skill India, Digital India, Viksit Bharat 2047</li>
+</ul>
+<hr>
+<h2>11. Risks and mitigations</h2>
+<table>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Free LLM rate limits or downtime</td>
+<td>Provider fallback chain, response cache, mock mode</td>
+</tr>
+<tr>
+<td>&quot;Just an LLM wrapper&quot; critique</td>
+<td>Grounded retrieval on curated MP/India data; deterministic gap analysis; visible score rubric</td>
+</tr>
+<tr>
+<td>Backend cold start on stage</td>
+<td>Health ping, waking banner, pre-warm</td>
+</tr>
+<tr>
+<td>Frontend and backend drift</td>
+<td>Generated types, frozen schema, fixtures, phase checkpoints</td>
+</tr>
+<tr>
+<td>Bad parsing on a judge's odd PDF</td>
+<td>Editable profile step plus paste-text fallback</td>
+</tr>
+<tr>
+<td>Dead links or stale scheme info</td>
+<td><code>last_verified</code> field, manual click-through before demo</td>
+</tr>
+<tr>
+<td>Resume PII concerns</td>
+<td>No content logging, <code>DELETE /api/session</code>, short privacy note in UI</td>
+</tr>
+<tr>
+<td>Scope creep</td>
+<td>Voice, Hindi, and animations are last. All 8 features reachable beats 3 perfect ones</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>12. Pitch alignment (one line each)</h2>
+<ul>
+<li><strong>NEP 2020:</strong> skill-linked, personalised pathways mapped to NPTEL/SWAYAM credits</li>
+<li><strong>Skill India:</strong> courses and apprenticeships drawn from Skill India Digital Hub, PMKVY, and NAPS</li>
+<li><strong>Digital India:</strong> AI counselling at a scale colleges can't staff</li>
+<li><strong>Viksit Bharat 2047:</strong> closing the &quot;degree vs employable&quot; gap, with MP-specific opportunities</li>
+</ul>
+<blockquote>
+<p>Verify all scheme names, eligibility rules, and URLs against official sources before using them in the demo or slides.</p>
+</blockquote>
+
+
+<!--claude-mermaid-runtime-begin:3477-->
+<style>.mermaid-diagram{margin-block:4px}.mermaid-diagram svg{display:block;margin:0 auto;max-width:100%;height:auto}</style>
+<script src="/_runtime/mermaid-11.16.1.min.js"></script>
+<script>(function(){
+var CFG={"palettes":{"light":{"surface":"#f4efe4","text":"#42392e","line":"#8a7f6d","border":"#7a6c52","bg":"#fffdf8"},"dark":{"surface":"#262b34","text":"#f2f3f5","line":"#a8adb8","border":"#9aa4b8","bg":"#1f232b"}}};
+if(typeof mermaid==='undefined')return;
+var pres=Array.prototype.slice.call(document.querySelectorAll('pre.mermaid')).filter(function(p){if(p.hasAttribute('data-claude-mermaid-claimed'))return false;p.setAttribute('data-claude-mermaid-claimed','1');return true;});
+if(!pres.length)return;
+var mq=window.matchMedia?window.matchMedia('(prefers-color-scheme: dark)'):null;
+var root=document.documentElement;
+var items=pres.map(function(pre){
+var mount=document.createElement('div');mount.className='mermaid-diagram';
+return {pre:pre,mount:mount,src:pre.textContent||''};
+});
+var seq=0;
+var renderGen=0;
+var lastKey='';
+function pageBg(fallback){
+var els=[document.body,document.documentElement];
+for(var i=0;i<els.length;i++){
+var c=els[i]&&getComputedStyle(els[i]).backgroundColor;
+if(c&&c!=='transparent'&&c!=='rgba(0, 0, 0, 0)')return c;
+}
+return fallback;
+}
+function render(){
+var theme=root.getAttribute('data-theme');
+var dark=theme==='dark'||(!!(mq&&mq.matches)&&theme!=='light');
+var pal=dark?CFG.palettes.dark:CFG.palettes.light;
+var bg=pageBg(pal.bg);
+var key=(dark?'d':'l')+'|'+bg;
+if(key===lastKey)return;
+lastKey=key;
+var gen=++renderGen;
+var font=getComputedStyle(document.body).fontFamily||'sans-serif';
+var nat={useMaxWidth:false};
+mermaid.initialize({
+startOnLoad:false,securityLevel:'strict',theme:'base',
+flowchart:nat,sequence:nat,er:nat,state:nat,class:nat,pie:nat,
+gantt:nat,journey:nat,timeline:nat,gitGraph:nat,mindmap:nat,xyChart:nat,
+quadrantChart:nat,sankey:nat,c4:nat,requirement:nat,block:nat,
+packet:nat,kanban:nat,architecture:nat,radar:nat,
+themeVariables:{background:bg,mainBkg:pal.surface,primaryColor:pal.surface,
+primaryTextColor:pal.text,lineColor:pal.line,primaryBorderColor:pal.border,
+nodeBorder:pal.border,clusterBorder:pal.border,edgeLabelBackground:bg,
+clusterBkg:'rgba(127,127,127,0.07)',titleColor:pal.text,
+darkMode:dark,rowOdd:bg,rowEven:'rgba(127,127,127,0.07)',
+attributeBackgroundColorOdd:bg,attributeBackgroundColorEven:'rgba(127,127,127,0.07)',
+fontSize:'16px',fontFamily:font},
+themeCSS:'.node rect, .node circle, .node polygon, .node path, .cluster rect { stroke-width: 2px; }'
+});
+items.forEach(function(it){
+var id='claude-mermaid-'+seq++;
+mermaid.render(id,it.src).then(function(r){
+if(gen!==renderGen)return;
+var prev=it.pre.previousElementSibling;
+if(prev&&prev.className==='mermaid-diagram'&&prev!==it.mount)return;
+it.mount.innerHTML=r.svg;
+if(!it.mount.parentNode)it.pre.parentNode.insertBefore(it.mount,it.pre);
+it.pre.style.display='none';
+},function(){
+var scratch=document.getElementById(id);
+if(scratch)scratch.parentNode.removeChild(scratch);
+scratch=document.getElementById('d'+id);
+if(scratch)scratch.parentNode.removeChild(scratch);
+if(gen!==renderGen)return;
+if(it.mount.parentNode)it.mount.parentNode.removeChild(it.mount);
+it.pre.style.display='';
+});
+});
+}
+render();
+if(mq&&mq.addEventListener)mq.addEventListener('change',render);
+if(typeof MutationObserver!=='undefined')new MutationObserver(render).observe(root,{attributes:true,attributeFilter:['data-theme']});
+})();</script>
+<!--claude-mermaid-runtime-end-->
+</body></html>

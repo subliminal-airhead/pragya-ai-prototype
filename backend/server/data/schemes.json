@@ -1,0 +1,130 @@
+[
+  {
+    "id": "scheme_mmsky",
+    "name": "Mukhyamantri Seekho-Kamao Yojana (MMSKY)",
+    "category": "State Govt Scheme (Madhya Pradesh)",
+    "ministry_or_dept": "Department of Technical Education, Skill Development & Employment, MP",
+    "portal_name": "MMSKY MP Portal",
+    "portal_url": "https://mmsky.mp.gov.in/",
+    "monthly_stipend_inr": "₹8,000 - ₹10,000 / month",
+    "target_audience": "12th Pass, ITI, Diploma & B.Tech / Graduate youth resident in Madhya Pradesh (Age 18-29)",
+    "eligibility_rules": {
+      "min_age": 18,
+      "max_age": 29,
+      "state_residence": "Madhya Pradesh",
+      "qualifications": ["12th", "ITI", "Diploma", "Graduate", "Post-Graduate", "B.Tech"]
+    },
+    "description": "Flagship Madhya Pradesh initiative providing on-the-job training in 703 industrial courses across 46 sectors. State government directly transfers 75% of the stipend to the candidate's Aadhaar-linked bank account (DBT).",
+    "benefits": [
+      "₹8,000/mo for 12th pass, ₹8,500/mo for ITI, ₹9,000/mo for Diploma, and ₹10,000/mo for Graduates/Engineers",
+      "Direct Benefit Transfer (DBT) into trainee bank account",
+      "State-recognized State Council for Vocational Training (SCVT) certification",
+      "High probability of permanent absorption in partner enterprise"
+    ],
+    "last_verified": "2026-09-20"
+  },
+  {
+    "id": "scheme_naps",
+    "name": "National Apprenticeship Promotion Scheme (NAPS)",
+    "category": "Central Government Scheme",
+    "ministry_or_dept": "Ministry of Skill Development and Entrepreneurship (MSDE), Govt of India",
+    "portal_name": "Apprenticeship India Portal",
+    "portal_url": "https://www.apprenticeshipindia.gov.in/",
+    "monthly_stipend_inr": "₹9,000 - ₹15,000 / month",
+    "target_audience": "Engineers, Diploma holders, and Vocational graduates across India",
+    "eligibility_rules": {
+      "min_age": 18,
+      "qualifications": ["Diploma", "Graduate", "B.Tech", "ITI"]
+    },
+    "description": "National program reimbursing 25% of prescribed stipend directly to candidates engaged in designated tech & engineering apprenticeship trades with public & private enterprises.",
+    "benefits": [
+      "Statutory apprenticeship certificate from Government of India",
+      "Real-world industrial exposure in leading PSUs and technology corporations",
+      "Direct stipend co-funding by MSDE"
+    ],
+    "last_verified": "2026-09-22"
+  },
+  {
+    "id": "scheme_pmkvy",
+    "name": "Pradhan Mantri Kaushal Vikas Yojana 4.0 (PMKVY)",
+    "category": "Skill India National Mission",
+    "ministry_or_dept": "National Skill Development Corporation (NSDC)",
+    "portal_name": "Skill India Digital Hub",
+    "portal_url": "https://www.skillindiadigital.gov.in/",
+    "monthly_stipend_inr": "Free Training + Assessment & Conveyance Allowance",
+    "target_audience": "Indian youth seeking industry 4.0 technical skills (AI, Cloud, IoT, Robotics)",
+    "eligibility_rules": {
+      "min_age": 18,
+      "qualifications": ["Any"]
+    },
+    "description": "Covers Industry 4.0 on-demand training tracks in emerging technologies with zero tuition fee and government assessment certification.",
+    "benefits": [
+      "100% sponsored government credential verified on Skill India Digital",
+      "National Skill Qualification Framework (NSQF) level 5-7 alignment",
+      "Placement assistance across NSDC partner job fairs (Rozgar Melas)"
+    ],
+    "last_verified": "2026-09-18"
+  },
+  {
+    "id": "scheme_meity_intern",
+    "name": "Digital India Internship Scheme",
+    "category": "Central Govt e-Governance Internship",
+    "ministry_or_dept": "Ministry of Electronics and Information Technology (MeitY)",
+    "portal_name": "MeitY Digital India Portal",
+    "portal_url": "https://www.meity.gov.in/schemes",
+    "monthly_stipend_inr": "₹10,000 / month",
+    "target_audience": "B.Tech / M.Tech / MCA students with minimum 60% marks in previous examinations",
+    "eligibility_rules": {
+      "min_cgpa": 6.5,
+      "qualifications": ["B.Tech", "MCA", "M.Tech", "B.E."]
+    },
+    "description": "Two-month summer/winter internship program providing exposure to public digital public infrastructure projects (DigiLocker, UPI, Aadhaar, e-Sign, and Open Government Data).",
+    "benefits": [
+      "Mentorship under senior scientists & e-governance directors at MeitY",
+      "Certificate of Internship from Government of India",
+      "Valuable credential for campus placements and public policy tech careers"
+    ],
+    "last_verified": "2026-09-25"
+  },
+  {
+    "id": "scheme_aicte_virtual",
+    "name": "AICTE Free Virtual Internship & NEAT Mission",
+    "category": "National Educational Alliance for Technology",
+    "ministry_or_dept": "All India Council for Technical Education (AICTE)",
+    "portal_name": "AICTE Internship Portal",
+    "portal_url": "https://internship.aicte-india.org/",
+    "monthly_stipend_inr": "Performance-based + Free Certification",
+    "target_audience": "All AICTE-affiliated college engineering and technical students",
+    "eligibility_rules": {
+      "qualifications": ["B.Tech", "Diploma", "B.E.", "BCA"]
+    },
+    "description": "Collaborative programs with Google, AWS, Salesforce, and Cisco providing verified project cohorts directly credited to university academic transcripts under NEP 2020.",
+    "benefits": [
+      "Automatic NEP 2020 credit transfer directly recognized by affiliated universities",
+      "Industry certificates verified on digital locker",
+      "Access to enterprise developer cloud sandbox credits"
+    ],
+    "last_verified": "2026-09-15"
+  },
+  {
+    "id": "scheme_mp_startup_seed",
+    "name": "MP Startup Policy & Student Innovation Seed Fund",
+    "category": "State Govt Entrepreneurship",
+    "ministry_or_dept": "Department of MSME, Madhya Pradesh",
+    "portal_name": "MP Startup Portal",
+    "portal_url": "https://startup.mp.gov.in/",
+    "monthly_stipend_inr": "Up to ₹10,00,000 Seed Grant + ₹10,000/mo Sustenance",
+    "target_audience": "Student founders and innovators in MP universities and incubation centers",
+    "eligibility_rules": {
+      "state_residence": "Madhya Pradesh",
+      "qualifications": ["Any Student / Graduate"]
+    },
+    "description": "Financial assistance, lease rental reimbursement, and innovation grants for engineering students commercializing technical prototypes or SaaS solutions.",
+    "benefits": [
+      "Monthly sustenance allowance of ₹10,000 for verified student innovators",
+      "Prototyping grant up to ₹5,00,000 and seed equity matching",
+      "Incubation support at Atal Incubation Centres across Bhopal and Indore"
+    ],
+    "last_verified": "2026-09-12"
+  }
+]

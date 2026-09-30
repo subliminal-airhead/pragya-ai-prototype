@@ -1,0 +1,173 @@
+[
+  {
+    "id": "mmsky",
+    "name": "Mukhyamantri Seekho Kamao Yojana (MMSKY)",
+    "kind": "scheme",
+    "authority": "Madhya Pradesh Government",
+    "benefits": "₹8,000-₹10,000 monthly stipend for skill training in various sectors",
+    "url": "https://mpskym.mp.gov.in/",
+    "eligibility": {
+      "min_age": 18,
+      "max_age": 29,
+      "min_qualification": "12th pass",
+      "domicile_states": ["Madhya Pradesh"],
+      "categories": []
+    },
+    "last_verified": "2024-01-15",
+    "verified": true
+  },
+  {
+    "id": "pm-internship-scheme",
+    "name": "Prime Minister's Internship Scheme",
+    "kind": "scheme",
+    "authority": "Ministry of Corporate Affairs, Government of India",
+    "benefits": "₹10,000 per month internship stipend for 12 months",
+    "url": "https://www.pminternship.mca.gov.in/",
+    "eligibility": {
+      "min_age": 21,
+      "max_age": 24,
+      "min_qualification": "Graduate",
+      "domicile_states": [],
+      "categories": [],
+      "additional_rules": ["Non-premier college graduates (not from IITs/IIMs/NLUs etc.)"]
+    },
+    "last_verified": "2024-01-15",
+    "verified": true
+  },
+  {
+    "id": "pmkvy-4-0",
+    "name": "Pradhan Mantri Kaushal Vikas Yojana 4.0 (PMKVY 4.0)",
+    "kind": "scheme",
+    "authority": "Ministry of Skill Development and Entrepreneurship, Government of India",
+    "benefits": "Free skill training with monetary rewards up to ₹10,000 per candidate",
+    "url": "https://pmkvyofficial.org/",
+    "eligibility": {
+      "min_age": 15,
+      "max_age": 45,
+      "min_qualification": "5th pass",
+      "domicile_states": [],
+      "categories": []
+    },
+    "last_verified": "2024-01-15",
+    "verified": true
+  },
+  {
+    "id": "national-career-service",
+    "name": "National Career Service (NCS) Portal",
+    "kind": "portal",
+    "authority": "Ministry of Labour and Employment, Government of India",
+    "benefits": "Free job matching, career counseling, vocational guidance, and skill development information",
+    "url": "https://ncs.gov.in/",
+    "eligibility": {
+      "min_age": 18,
+      "max_age": None,
+      "min_qualification": "None",
+      "domicile_states": [],
+      "categories": []
+    },
+    "last_verified": "2024-01-15",
+    "verified": true
+  },
+  {
+    "id": "apprenticeship-naps",
+    "name": "National Apprenticeship Promotion Scheme (NAPS)",
+    "kind": "apprenticeship",
+    "authority": "Ministry of Skill Development and Entrepreneurship, Government of India",
+    "benefits": "Employers get 25% of prescribed stipend subject to max ₹1500 per month per apprentice",
+    "url": "https://apprenticeshipindia.org/",
+    "eligibility": {
+      "min_age": 14,
+      "max_age": None,
+      "min_qualification": "5th pass",
+      "domicile_states": [],
+      "categories": []
+    },
+    "last_verified": "2024-01-15",
+    "verified": true
+  },
+  {
+    "id": "skill-india-digital-hub",
+    "name": "Skill India Digital Hub (SIDH)",
+    "kind": "portal",
+    "authority": "Ministry of Skill Development and Entrepreneurship, Government of India",
+    "benefits": "Aggregates free and paid skill training courses from various providers",
+    "url": "https://skillindiadigital.gov.in/",
+    "eligibility": {
+      "min_age": 15,
+      "max_age": None,
+      "min_qualification": "None",
+      "domicile_states": [],
+      "categories": []
+    },
+    "last_verified": "2024-01-15",
+    "verified": true
+  },
+  {
+    "id": "mpss-exam",
+    "name": "Madhya Pradesh Public Service Commission (MPPSC) Exams",
+    "kind": "exam",
+    "authority": "Madhya Pradesh Public Service Commission",
+    "benefits": "Eligibility for various Group A, B, C, D government jobs in MP state",
+    "url": "https://www.mppsc.mp.gov.in/",
+    "eligibility": {
+      "min_age": 21,
+      "max_age": 33,
+      "min_qualification": "Graduate",
+      "domicile_states": ["Madhya Pradesh"],
+      "categories": []
+    },
+    "last_verified": "2024-01-15",
+    "verified": true
+  },
+  {
+    "id": "mppsc-exam",
+    "name": "Madhya Pradesh Professional Examination Board (MPPEB) Exams",
+    "kind": "exam",
+    "authority": "Madhya Pradesh Professional Examination Board",
+    "benefits": "Eligibility for various subordinate services, constable, teacher, and other posts in MP",
+    "url": "https://www.peb.mp.gov.in/",
+    "eligibility": {
+      "min_age": 18,
+      "max_age": 40,
+      "min_qualification": "12th pass",
+      "domicile_states": ["Madhya Pradesh"],
+      "categories": []
+    },
+    "last_verified": "2024-01-15",
+    "verified": true
+  },
+  {
+    "id": "ssc-exams",
+    "name": "Staff Selection Commission (SSC) Exams",
+    "kind": "exam",
+    "authority": "Staff Selection Commission, Government of India",
+    "benefits": "Eligibility for various Group B and C posts in central government ministries",
+    "url": "https://ssc.nic.in/",
+    "eligibility": {
+      "min_age": 18,
+      "max_age": 32,
+      "min_qualification": "12th pass",
+      "domicile_states": [],
+      "categories": []
+    },
+    "last_verified": "2024-01-15",
+    "verified": true
+  },
+  {
+    "id": "banking-exams",
+    "name": "Banking Exams (IBPS, SBI PO, RBI Grade B)",
+    "kind": "exam",
+    "authority": "Various Banking Recruitment Agencies",
+    "benefits": "Eligibility for Probationary Officer, Clerk, and Specialist Officer positions in public sector banks",
+    "url": "https://ibps.in/",
+    "eligibility": {
+      "min_age": 20,
+      "max_age": 30,
+      "min_qualification": "Graduate",
+      "domicile_states": [],
+      "categories": []
+    },
+    "last_verified": "2024-01-15",
+    "verified": true
+  }
+]

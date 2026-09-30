@@ -1,0 +1,1 @@
+[{'opportunity_id': 'internship-001', 'title': 'Software Development Internship', 'organization': 'Tech Solutions Inc', 'type': 'internship', 'location': 'Bangalore', 'mode': 'hybrid', 'stipend_or_salary': '₹15,000/month', 'url': 'https://example.com/internship-001', 'match_score': 78, 'matched_skills': ['python', 'java'], 'missing_skills': ['spring boot']}

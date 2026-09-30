@@ -1,0 +1,1 @@
+[{'course_id': 'spring-boot-course', 'title': 'Spring Boot Framework', 'provider': 'NPTEL', 'url': 'https://example.com/spring-boot', 'skills_covered': ['spring boot', 'java', 'microservices'], 'level': 'beginner', 'duration_weeks': 8, 'cost_inr': 0, 'certificate': True, 'order': 1, 'rationale': 'Addresses critical missing skill in Spring Boot framework'}]
