@@ -109,6 +109,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     if (!currentAccount || currentAccount.id === 'guest') return;
     const updatedAccount: UserAccount = {
       ...currentAccount,
+      email: user.email ? user.email.trim().toLowerCase() : currentAccount.email,
       profile: user,
       opportunityOverrides,
       courses,

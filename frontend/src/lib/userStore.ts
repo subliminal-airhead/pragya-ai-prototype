@@ -165,7 +165,14 @@ export function getAccountById(id: string): UserAccount | undefined {
 
 export function saveUserAccount(account: UserAccount): void {
   const accounts = getAllAccounts();
-  accounts[account.email.trim().toLowerCase()] = account;
+  const cleanEmail = account.email.trim().toLowerCase();
+  // Remove any stale keys for this same account id if email changed
+  for (const [key, acc] of Object.entries(accounts)) {
+    if (acc.id === account.id && key !== cleanEmail) {
+      delete accounts[key];
+    }
+  }
+  accounts[cleanEmail] = account;
   saveAllAccounts(accounts);
 }
 
