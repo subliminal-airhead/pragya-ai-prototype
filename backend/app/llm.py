@@ -501,14 +501,15 @@ def _call_groq(prompt_name: str, variables: Dict[str, Any], schema: Type[T]) -> 
         response_format={"type": "json_object"}
     )
 
-      response_text = response.choices[0].message.content
-    
-    # Strip markdown json blocks if present
-    if response_text.startswith('```json'):
-        response_text = response_text.split('```json', 1)[1]
-    if response_text.endswith('```'):
-        response_text = response_text.rsplit('```', 1)[0]
-    
+    response_text = response.choices[0].message.content or ""
+    response_text = response_text.strip()
+    if response_text.startswith("```json"):
+        response_text = response_text[7:]
+    elif response_text.startswith("```"):
+        response_text = response_text[3:]
+    if response_text.endswith("```"):
+        response_text = response_text[:-3]
+
     return response_text.strip()
 
 def _call_gemini(prompt_name: str, variables: Dict[str, Any], schema: Type[T]) -> str:
@@ -527,7 +528,8 @@ Return ONLY valid JSON matching this schema: {json.dumps(schema_json)}
 {prompt_text}
 """
 
-    model = genai.GenerativeModel(getattr(settings, "LLM_MODEL", "llama-3.3-70b-versatile") or "gemini-1.5-flash")
+    gemini_model = getattr(settings, "GEMINI_MODEL", "gemini-1.5-flash")
+    model = genai.GenerativeModel(gemini_model)
     response = model.generate_content(
         full_prompt,
         generation_config=genai.types.GenerationConfig(
@@ -536,7 +538,16 @@ Return ONLY valid JSON matching this schema: {json.dumps(schema_json)}
         )
     )
 
-    return response.text
+    res_text = response.text or ""
+    res_text = res_text.strip()
+    if res_text.startswith("```json"):
+        res_text = res_text[7:]
+    elif res_text.startswith("```"):
+        res_text = res_text[3:]
+    if res_text.endswith("```"):
+        res_text = res_text[:-3]
+
+    return res_text.strip()
 
 # Alias for backward compatibility
 def generate_structured_response(prompt_name: str, variables: Dict[str, Any], schema: Type[T]) -> T:
