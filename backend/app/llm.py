@@ -7,7 +7,9 @@ from groq import Groq
 import google.generativeai as genai
 from .config import settings
 from .deps import get_db
+from .db import LLMCache
 from sqlmodel import Session, select
+from datetime import datetime, timezone
 import time
 
 T = TypeVar('T', bound=BaseModel)
@@ -37,7 +39,7 @@ class LLMCacheDB:
 
         if existing:
             existing.response_json = json.dumps(value)
-            existing.created_at = time.time()
+            existing.created_at = datetime.now(timezone.utc)
         else:
             cache_entry = LLMCache(
                 key=key,
@@ -402,7 +404,7 @@ def generate(prompt_name: str, variables: Dict[str, Any], schema: Type[T]) -> T:
         schema_json = schema.model_json_schema()
         cache_key = get_cache_key(
             getattr(settings, "LLM_PROVIDER", "groq") or "groq",
-            getattr(settings, "LLM_MODEL", "llama-3.3-70b-versatile") or "llama-3.3-70b-versatile",
+            getattr(settings, "LLM_MODEL", "openai/gpt-oss-120b") or "openai/gpt-oss-120b",
             prompt_text,
             schema_json
         )
@@ -494,7 +496,7 @@ def _call_groq(prompt_name: str, variables: Dict[str, Any], schema: Type[T]) -> 
     ]
 
     response = client.chat.completions.create(
-        model=getattr(settings, "LLM_MODEL", "llama-3.3-70b-versatile") or "llama-3.3-70b-versatile",
+        model=getattr(settings, "LLM_MODEL", "openai/gpt-oss-120b") or "openai/gpt-oss-120b",
         messages=messages,
         temperature=0.1,
         max_tokens=1000,

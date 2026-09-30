@@ -114,18 +114,18 @@ export const ResumeUpload: React.FC = () => {
           setBackendProfileId(apiRes.profile_id);
         }
         ingestResume({
-          fullName: prof.name || 'Student',
-          email: prof.email || '',
-            phone: prof.phone || '',
-          university: edu.institution || 'University',
-          degree: edu.degree || 'B.Tech',
-          major: edu.field || 'Computer Science',
-          gradYear: edu.year ? String(edu.year) : '2027',
-          cgpa: edu.score || '8.0 / 10.0',
-          location: prof.location || 'India',
-          headline: prof.summary ? prof.summary.split('.')[0] : '',
-          bio: prof.summary || '',
-          skills: mappedSkills,
+          fullName: prof.name || user.fullName || 'Student',
+          email: prof.email || user.email || '',
+          phone: prof.phone || user.phone || '',
+          university: edu.institution || user.university || 'University',
+          degree: edu.degree || user.degree || 'B.Tech',
+          major: edu.field || user.major || 'Computer Science',
+          gradYear: edu.year ? String(edu.year) : (user.gradYear || '2027'),
+          cgpa: edu.score || user.cgpa || '8.0 / 10.0',
+          location: prof.location || user.location || 'India',
+          headline: prof.summary ? prof.summary.split('.')[0] : user.headline,
+          bio: prof.summary || user.bio || '',
+          skills: mappedSkills.length > 0 ? mappedSkills : user.skills,
           experiences: (prof.experience || []).map((e: any) => ({
             id: `exp_${Math.random().toString(36).slice(2)}`,
             role: e.role || '',
@@ -133,10 +133,10 @@ export const ResumeUpload: React.FC = () => {
             duration: e.duration || '',
             description: e.description || '',
           })),
-          projects: mappedProjects,
+          projects: mappedProjects.length > 0 ? mappedProjects : user.projects,
           rawText: '',
-          atsScore: 80,
-          atsBreakdown: { parseability: 88, quantification: 78, keywordDensity: 82 },
+          atsScore: 85,
+          atsBreakdown: { parseability: 90, quantification: 82, keywordDensity: 84 },
           detectedKeyCount: mappedSkills.length,
           quantifiedBulletsCount: 3,
         }, selectedFile?.name);
@@ -150,7 +150,7 @@ export const ResumeUpload: React.FC = () => {
         const defaultParsed = parseResumeText(selectedFile.name, selectedFile.name);
         ingestResume(defaultParsed, selectedFile.name);
       } else {
-        switchPersona('divyansh');
+        showToast('Could not parse resume text. Keeping your current profile.');
       }
     } finally {
       setTimeout(() => {
