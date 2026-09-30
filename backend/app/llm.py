@@ -401,8 +401,8 @@ def generate(prompt_name: str, variables: Dict[str, Any], schema: Type[T]) -> T:
         prompt_text = _render_prompt(prompt_name, variables)
         schema_json = schema.model_json_schema()
         cache_key = get_cache_key(
-            settings.LLM_PROVIDER or "groq",
-            settings.LLM_MODEL or "llama-3.3-70b-versatile",
+            getattr(settings, "LLM_PROVIDER", "groq") or "groq",
+            getattr(settings, "LLM_MODEL", "llama-3.3-70b-versatile") or "llama-3.3-70b-versatile",
             prompt_text,
             schema_json
         )
@@ -494,14 +494,22 @@ def _call_groq(prompt_name: str, variables: Dict[str, Any], schema: Type[T]) -> 
     ]
 
     response = client.chat.completions.create(
-        model=settings.LLM_MODEL or "llama-3.3-70b-versatile",
+        model=getattr(settings, "LLM_MODEL", "llama-3.3-70b-versatile") or "llama-3.3-70b-versatile",
         messages=messages,
         temperature=0.1,
         max_tokens=1000,
         response_format={"type": "json_object"}
     )
 
-    return response.choices[0].message.content
+                response_text = response.choices[0].message.content
+            # Strip markdown json blocks if present
+            if response_text.startswith('`json'):
+                response_text = response_text.split('`json', 1)[1]
+            if response_text.endswith('`'):
+                response_text = response_text.rsplit('`', 1)[0]
+            response_text = response_text.strip()
+            
+            return response_text
 
 def _call_gemini(prompt_name: str, variables: Dict[str, Any], schema: Type[T]) -> str:
     """Call Google Gemini API"""
@@ -519,7 +527,7 @@ Return ONLY valid JSON matching this schema: {json.dumps(schema_json)}
 {prompt_text}
 """
 
-    model = genai.GenerativeModel(settings.LLM_MODEL or "gemini-1.5-flash")
+    model = genai.GenerativeModel(getattr(settings, "LLM_MODEL", "llama-3.3-70b-versatile") or "gemini-1.5-flash")
     response = model.generate_content(
         full_prompt,
         generation_config=genai.types.GenerationConfig(
@@ -533,3 +541,4 @@ Return ONLY valid JSON matching this schema: {json.dumps(schema_json)}
 # Alias for backward compatibility
 def generate_structured_response(prompt_name: str, variables: Dict[str, Any], schema: Type[T]) -> T:
     return generate(prompt_name, variables, schema)
+
